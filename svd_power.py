@@ -37,7 +37,7 @@ def powerIterate_v2(A, x, dif, maxloop):
 
 #Find v1 for matrix A 
 def powerIterate_v3(A, maxloop):
-	v_i = np.ones((A.shape[0],1))
+	v_i = np.ones((A.shape[1],1))
 	B = A.T.dot(A)
 	count = 0
 	while count < maxloop:
@@ -52,7 +52,7 @@ def powerIterate_v3(A, maxloop):
 	return v_i
 	
 def SVD_POWER(A, maxloop):
-	Vh = np.zeros((0,A.shape[0]))
+	Vh = np.zeros((0,A.shape[1]))
 	D = np.zeros(0)
 	A_new = A
 	U = np.zeros((A.shape[0],0))
