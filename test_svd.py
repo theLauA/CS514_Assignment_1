@@ -6,7 +6,7 @@ A = np.array([[1,2,3,4,5,6,7,8,9,10],[2,3,4,5,6,7,8,9,10,0],[3,4,5,6,7,8,9,10,0,
 
 #x = np.transpose(np.array([1,1,1,1,1,1,1,1,1,1]))
 x = np.random.rand(10,1)
-U_p, D_p, V_p = SVD_POWER(A, x,0,1000)
+U_p, D_p, V_p = SVD_POWER(A,1000)
 
 #print(np.linalg.norm(A.dot(v1)))
 #print(D_p)
