@@ -8,7 +8,7 @@ x_4 = np.random.rand(10,4)
 difference = 1
 
 v1 = powerIterate_v3(A, 100)
-v4 = powerIterate_v2(A,x_4,0,100)
+v4 = powerIterate_v2(A,x_4,100)
 
 print("The First Eigenvector from Power Method")
 print(v1)

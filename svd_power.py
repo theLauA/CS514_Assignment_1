@@ -22,14 +22,14 @@ def powerIterate(A, x, dif, maxloop):
 	return x_i
 
 #Power Method with othornormal basis
-def powerIterate_v2(A, x, dif, maxloop):
+def powerIterate_v2(A, x, maxloop):
 	curr_dif = 1.00
 	count = 0
 	x_i = orth(x)
-	while curr_dif > dif and count < maxloop:
+	while count < maxloop:
 		x_tmp = np.dot(A,x_i)
 		x_tmp = orth(x_tmp)
-		curr_dif = np.linalg.norm(x_i - x_tmp, 2)
+		#curr_dif = np.linalg.norm(x_i - x_tmp, 2)
 		x_i = x_tmp
 		count+=1
 	
@@ -52,11 +52,13 @@ def powerIterate_v3(A, maxloop):
 	return v_i
 	
 def SVD_POWER(A, maxloop):
-	Vh = np.zeros((0,A.shape[1]))
+	N, M = A.shape
+	Vh = np.zeros((0,M))
 	D = np.zeros(0)
 	A_new = A
-	U = np.zeros((A.shape[0],0))
-	for i in range(A.shape[1]):
+	U = np.zeros((N,0))
+	k = min(N, M)
+	for i in range(k):
 		#print(i)
 		v_i = powerIterate_v3(A_new,maxloop)
 		A_v = A.dot(v_i)
